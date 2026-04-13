@@ -1,0 +1,21 @@
+.tooltip {
+    position: absolute;
+    z-index: 500;
+    background: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 0 2px #fb5, 0 0 0 6px rgba(0, 0, 0, .6);
+    padding: .5rem;
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: .875rem;
+    max-width: 170px;
+    border-radius: 2px;
+}
+
+/* ================= TOOLTIP DARK MODE ================= */
+
+.dark .tooltip {
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 0 0 2px #333, 0 0 0 6px rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+}
