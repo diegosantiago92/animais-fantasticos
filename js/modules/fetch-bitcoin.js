@@ -1,8 +1,5 @@
 export default function initFetchBitcoin() {
-  
-}
-
-const urlBitcoin = 'https://blockchain.info/ticker';
+  const urlBitcoin = 'https://blockchain.info/ticker';
 const valorBitcoin = document.querySelector(".btc-preco");
 
 async function fetchBitcoin(url) {
@@ -28,3 +25,6 @@ fetchBitcoin(urlBitcoin);
 setInterval(() => {
   fetchBitcoin(urlBitcoin);
 }, 30000);
+}
+
+initFetchBitcoin();
