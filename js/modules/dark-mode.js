@@ -1,5 +1,5 @@
 export default function initDarkMode() {
-  const btn = document.querySelector('[data-theme]');
+  const btn = document.querySelector("[data-theme]");
   if (!btn) return;
 
   const html = document.documentElement;
@@ -16,41 +16,37 @@ export default function initDarkMode() {
     return mediaQuery.matches ? "dark" : "light";
   }
 
-function toggleTheme() {
-  const current = html.classList.contains("dark") ? "dark" : "light";
-  const next = current === "dark" ? "light" : "dark";
+  function toggleTheme() {
+    const current = html.classList.contains("dark") ? "dark" : "light";
+    const next = current === "dark" ? "light" : "dark";
 
-  html.classList.toggle("dark");
+    html.classList.toggle("dark");
 
-  localStorage.setItem("theme", next);
+    localStorage.setItem("theme", next);
 
-  showToast(
-    next === "dark"
-      ? "🌙 Modo escuro ativado"
-      : "☀ Modo claro ativado"
-  );
-}
+    showToast(next === "dark" ? "🌙 Modo escuro ativado" : "☀ Modo claro ativado");
+  }
 
   let toastTimeout;
 
-function showToast(message) {
-  let toast = document.querySelector(".theme-toast");
+  function showToast(message) {
+    let toast = document.querySelector(".theme-toast");
 
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.className = "theme-toast";
-    document.body.appendChild(toast);
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "theme-toast";
+      document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimeout);
+
+    toastTimeout = setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2000);
   }
-
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(toastTimeout);
-
-  toastTimeout = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2000);
-}
 
   // Inicializa
   applyTheme(getPreferredTheme());
@@ -71,5 +67,4 @@ function showToast(message) {
       applyTheme(e.matches ? "dark" : "light");
     }
   });
-
 }
