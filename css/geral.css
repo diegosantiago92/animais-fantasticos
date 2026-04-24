@@ -409,7 +409,7 @@ body {
   width: 58px;
   height: 30px;
   background: #e4e4e4;
-  border-radius: 50px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   padding: 4px;
@@ -459,7 +459,7 @@ body {
 }
 
 .dark .toggle-thumb {
-  transform: translateX(28px);
+  transform: translateX(34px);
   background: #111;
 }
 
