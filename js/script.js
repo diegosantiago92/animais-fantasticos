@@ -6,7 +6,7 @@ import Tooltip from "./modules/tooltip.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import initDarkMode from "./modules/dark-mode.js";
-import initFuncionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
 import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnima from "./modules/scroll-anima.js";
@@ -20,23 +20,24 @@ accordion.init();
 const tabNav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
 tabNav.init();
 
-const modal =  new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
+const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init();
 
-const tooltip =  new Tooltip('[data-tooltip]');
+const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
 
-const dropdownMenu = new DropdownMenu('[data-dropdown]');
+const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
 
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
+const funcionamento = new Funcionamento('[data-semana]', 'aberto');
+funcionamento.init();
 
 initDarkMode();
-initFuncionamento();
 initFetchAnimais();
 initFetchBitcoin();
